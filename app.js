@@ -63,7 +63,6 @@ app.post("/compose", function (req, res) {
   posts.push(post);
 
   res.redirect("/");
-  console.log(req.body);
 });
 ///////////////////////////////// POSTS ROUTE + ROUTE PARAMS ////////////////////
 
@@ -82,17 +81,15 @@ app.get("/posts/:postName", function (req, res) {
     //3.1.Here we use if statement to see if storedTile is equal t0 requestTitle then
     // console.log("match found ") when is true.
     if (storedTitle === requestTitle) {
-      console.log("Match found!!!!!!!!");
       res.render("post", {
         title: post.title,
         content: post.content,
-        newOne: requestTitle,
       });
     }
   });
 });
 
 /////////////////////////////////////////////////////////////////////////////////
-app.listen(process.env.PORT || "3000", function () {
-  console.log("Server started on port 3000");
+app.listen(process.env.PORT || 1212, function () {
+  console.log("Server started on port 1212");
 });
